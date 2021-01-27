@@ -1,5 +1,5 @@
-# Code for the forthcoming **Raspberry Pi Pico Projects** book
-*(currently under construction)*
+# Code for **Raspberry Pi Pico Projects**
+*(book currently under construction!)*
 
 Code in the `src/pi` folder runs under Python 3 on a Raspberry Pi or other computer connected to a 
 Raspberry Pi Pico running MicroPython or CircuitPython.
