@@ -2,6 +2,7 @@
 
 ## Send commands to the Pico and read their results.
 
+This project was first covered [here](https://blog.rareschool.com/2021/01/controlling-raspberry-pi-pico-using.html).
 
 ### Connect the host and the Pico
 
