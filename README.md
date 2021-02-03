@@ -1,17 +1,15 @@
-# Code for *Raspberry Pi Pico Projects*
-*(book currently under construction!)*
+# Code for *Raspberry Pi Pico*
 
-Code in the `src/pi` folder runs under Python 3 on a Raspberry Pi or other computer connected to a 
-Raspberry Pi Pico running MicroPython or CircuitPython.
+Some projects also requires an attached Raspberry Pi (the *host*) running additional code.
 
-The `src/pico` folder contains code for the Pico.
+The `src/<project>/README.md` file describes each project.
 
-The first program is a sender that uses PySerial to send commands from the Pi to the Pico and read the result.
+The `src/<project>pico` folder contains code the relevant project for the Pico.
 
-To run it,
-1. Run `pip3 install pyserial`.
-1. Copy `sender.py` into a directory of your choice.
-1. In that directory, run `python3` to start an interactive session.
-1. In the session, type `send`
+If present, code in the `src/<project>/host` folder has been tested on a Raspberry Pi connected to a 
+Raspberry Pi Pico under Python 3.7. It may need modification to run on other Linux, Windows or Mac computers.
 
-If all is well, this will send '2 + 2' to the Pico and print the result.
+The [first project](src/talker/README.md) `talker` uses  a Talker bused on PySerial to send commands from the Pi to the
+Pico and read  output from the Pi.
+
+

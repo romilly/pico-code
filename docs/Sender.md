@@ -11,6 +11,7 @@ First, connect the host to the Pico using a USB **data** lead. Some USB leads on
 Next, install the `blinker` script.
 
 The `blinker.py` runs on the Pico.
+
 1. Install it on the Pico using the `Thonny` editor.
     1. Open the gist on GitHib.
     1. Copy the code th your clipboard.
@@ -29,6 +30,7 @@ It uses PySerial to send commands from the host to the Raspberry Pi Pico and
 read the result.
 
 To use it, *on the host*
+
 1. Run `pip3 install pyserial`.
 1. Copy `sender.py` into a directory of your choice.
 1. In that directory, run `python3` to start an interactive session.
