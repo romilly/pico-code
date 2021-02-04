@@ -2,7 +2,8 @@
 
 from machine import Pin, ADC
 from rp2 import PIO, StateMachine, asm_pio
-from time import sleep_us
+from time import sleep_us, sleep_ms
+import _thread
 
 
 @asm_pio(sideset_init=PIO.OUT_LOW)
@@ -66,9 +67,22 @@ sines = [
 ]
 
 
-delay = 40
+pot = ADC(26)
+delay = [400]
+
+
+def read_pot():
+    while True:
+        v = pot.read_u16()
+        delay[0] = 20 + (400 * v)// 65000
+        sleep_ms(100)
+
+
+_thread.start_new_thread(read_pot, ())
+
 while True:
-    for i in range(0, 250, 10):
+    for i in range(0, 250, 25):
         pwm.set(sines[i])
-        sleep_us(delay)
+        sleep_us(delay[0])
+
 
