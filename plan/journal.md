@@ -2,7 +2,8 @@
 
 ## Thursday 04 February 2021
 
-Keeping Gists updated is a pain, so I'll track progress in this journal.
+Keeping Gists updated is a pain,
+so I'll track progress in this journal and update code in this project.
 
 
 
