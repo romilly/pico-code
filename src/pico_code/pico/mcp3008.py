@@ -10,16 +10,16 @@ Thanks, @Adafruit, for all you've given us!
 
 import machine
 
- class MCP3008:
+class MCP3008:
 
 
-    def __init__(self, spi_bus, cs, ref_voltage=3.3):
+    def __init__(self, ref_voltage=3.3):
         spi_sck = machine.Pin(2)
         spi_tx = machine.Pin(3)
         spi_rx = machine.Pin(4)
         self.spi_cs = machine.Pin(22, machine.Pin.OUT)
         self.spi_cs.value(1) # ncs on
-        self._spi_device = machine.SPI(0, baudreate=100000, sck=spi_sck, mosi=spi_tx, miso=spi_rx)
+        self._spi_device = machine.SPI(0, baudrate=100000, sck=spi_sck, mosi=spi_tx, miso=spi_rx)
         self._out_buf = bytearray(3)
         self._out_buf[0] = 0x01
         self._in_buf = bytearray(3)
