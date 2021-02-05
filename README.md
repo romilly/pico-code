@@ -19,4 +19,8 @@ Pico and read  output from the Pi.
 
 [fungen](docs/fungen.md) is a minimalist AF (Audio Frequency) generator based on the Pico.
 
+## MCO3008
+
+[mcp3008](mcp3008.md) is a MicroPython driver for the MCP3008 80-channel SPI ADC.
+
 
