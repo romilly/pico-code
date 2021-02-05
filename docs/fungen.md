@@ -20,11 +20,11 @@ smooth analogue output. The filter consists of a resistor and capacitor: crude b
 
 Here's a picture of the Pico + filter.
 
-![Pico on breadboard with filter](fungen.jpg)
+![Pico on breadboard with filter](img/fungen.jpg)
 
 Here's some sample output which is displayed on the Pi using a [bitscope micro]() to capture the signal.
 
-![1 kHz sine wave](fungen-1kHz.png)
+![1 kHz sine wave](img/fungen-1kHz.png)
 
 
 

@@ -8,7 +8,7 @@ This project was first covered [here](https://blog.rareschool.com/2021/01/contro
 
 Connect the host to the Pico using a USB *data* lead. Some USB leads only supply power. *They will not work*.
 
-![Pi + Pico](pi-n-pico.jpg)
+![Pi + Pico](img/pi-n-pico.jpg)
 
 ### Install software on the Pico
 
