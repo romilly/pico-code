@@ -4,7 +4,13 @@ import serial
 class Talker:
     TERMINATOR = '\r'.encode('UTF8')
 
-    def __init__(self, timeout=-1): # default is no timeout
+    def __init__(self, timeout=-1):
+        """
+        Initialise Talker instance
+
+
+        :param timeout:
+        """
         self.serial = serial.Serial('/dev/ttyACM0', 115200, timeout=timeout)
 
     def send(self, text: str):
