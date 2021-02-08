@@ -8,7 +8,7 @@ https://github.com/adafruit/Adafruit_CircuitPython_MCP3xxx
 
 class MCP3008:
     """
-    CP3008 8-channel, 10-bit, analog-to-digital converter.
+    MCP3008 8-channel, 10-bit, analog-to-digital converter.
     """
 
 
