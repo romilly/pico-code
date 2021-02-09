@@ -11,5 +11,3 @@ I've simplified the file structure and added the etcher project.
 
 
 
-
-

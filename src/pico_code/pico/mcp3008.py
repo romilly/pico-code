@@ -10,18 +10,20 @@ Thanks, @Adafruit, for all you've given us!
 
 import machine
 
+
 class MCP3008:
 
-
-    def __init__(self, spi, cs, ref_voltage=3.3):
-        self.spi_cs = cs
+    def __init__(self, ref_voltage=3.3):
+        spi_sck = machine.Pin(2)
+        spi_tx = machine.Pin(3)
+        spi_rx = machine.Pin(4)
+        self.spi_cs = machine.Pin(22, machine.Pin.OUT)
         self.spi_cs.value(1) # ncs on
-        self._spi_device = spi
+        self._spi_device = machine.SPI(0, baudrate=100000, sck=spi_sck, mosi=spi_tx, miso=spi_rx)
         self._out_buf = bytearray(3)
         self._out_buf[0] = 0x01
         self._in_buf = bytearray(3)
         self._ref_voltage = ref_voltage
-
 
     def reference_voltage(self):
         """Returns the MCP3xxx's reference voltage. (read-only)"""
@@ -42,4 +44,3 @@ class MCP3008:
         self._spi_device.write_readinto(self._out_buf, self._in_buf)
         self.spi_cs.value(1) # turn off
         return ((self._in_buf[1] & 0x03) << 8) | self._in_buf[2]
-
