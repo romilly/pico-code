@@ -1,11 +1,15 @@
 """
-Drive am MCP3008 8-channel ADC from a Raspberry Pi Pico using MicroPython
+MicroPython Library for MCP3008 8-channel ADC with SPI
 
-Code makes much use of Tony di Cola's CircuitPython code at
+Datasheet for the MCP3008: https://www.microchip.com/datasheet/MCP3008
+
+This code makes much use of Adafruit's CircuitPython code at
 https://github.com/adafruit/Adafruit_CircuitPython_MCP3xxx
-adapted to use 'vanilla' MicroPython on the Pico.
+adapted for MicroPython.
 
-Thanks, @Adafruit, for all you've given us!
+Tested on the Raspberry Pi Pico.
+
+Thanks, @Raspberry_Pi and @Adafruit, for all you've given us!
 """
 
 import machine
@@ -13,34 +17,43 @@ import machine
 
 class MCP3008:
 
-    def __init__(self, ref_voltage=3.3):
-        spi_sck = machine.Pin(2)
-        spi_tx = machine.Pin(3)
-        spi_rx = machine.Pin(4)
-        self.spi_cs = machine.Pin(22, machine.Pin.OUT)
-        self.spi_cs.value(1) # ncs on
-        self._spi_device = machine.SPI(0, baudrate=100000, sck=spi_sck, mosi=spi_tx, miso=spi_rx)
+    def __init__(self, spi, cs, ref_voltage=3.3):
+        """
+        Create MCP3008 instance
+
+        Args:
+            spi: configured SPI bus
+            cs:  pin to use for chip select
+            ref_voltage: r
+        """
+        self.cs = cs
+        self.cs.value(1) # ncs on
+        self._spi = spi
         self._out_buf = bytearray(3)
         self._out_buf[0] = 0x01
         self._in_buf = bytearray(3)
         self._ref_voltage = ref_voltage
 
-    def reference_voltage(self):
-        """Returns the MCP3xxx's reference voltage. (read-only)"""
+    def reference_voltage(self) -> float:
+        """Returns the MCP3xxx's reference voltage as a float."""
         return self._ref_voltage
 
     def read(self, pin, is_differential=False):
-        """SPI Interface for MCP3xxx-based ADCs reads. Due to 10-bit accuracy, the returned
-        value ranges [0, 1023].
-        :param int pin: individual or differential pin.
-        :param bool is_differential: single-ended or differential read.
-        .. note:: This library offers a helper class called `AnalogIn`_ for both single-ended
-            and differential reads. If you opt to not implement `AnalogIn`_ during differential
-            reads, then the ``pin`` parameter should be the first of the two pins associated with
-            the desired differential channel mapping.
         """
-        self.spi_cs.value(0) # select
+        read a voltage or voltage difference using the MCP3008.
+
+        Args:
+            pin: the pin to use
+            is_differential: if true, return the potential difference between two pins,
+
+
+        Returns:
+            voltage in range [0, 1023] where 1023 =
+
+        """
+
+        self.cs.value(0) # select
         self._out_buf[1] = ((not is_differential) << 7) | (pin << 4)
-        self._spi_device.write_readinto(self._out_buf, self._in_buf)
-        self.spi_cs.value(1) # turn off
+        self._spi.write_readinto(self._out_buf, self._in_buf)
+        self.cs.value(1) # turn off
         return ((self._in_buf[1] & 0x03) << 8) | self._in_buf[2]
