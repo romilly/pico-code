@@ -2,7 +2,7 @@
 Use PIO to implement PWM.
 
 
-Trimmed from
+Trimmed and adapted from
 https://github.com/raspberrypi/pico-micropython-examples/blob/master/pio/pio_pwm.py
 """
 

@@ -6,7 +6,7 @@ import _thread
 
 from pio_dac import PIOPWM
 
-# Pin GP0 (physical pin 1) is output
+# Pin GP22 is output
 pwm = PIOPWM(0, 22, max_count=250, count_freq=10_000_000)
 
 sines = [
