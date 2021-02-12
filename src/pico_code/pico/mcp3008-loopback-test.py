@@ -2,7 +2,7 @@ from machine import Pin, SPI
 from time import sleep, sleep_ms
 from mcp3008 import MCP3008
 
-spi = SPI(0, 100000)
+spi = SPI(0, sck=Pin(2),mosi=Pin(3),miso=Pin(4), baudrate=100000)
 cs = Pin(22, Pin.OUT)
 cs.value(1) # disable chip at start
 

@@ -48,7 +48,7 @@ class MCP3008:
 
 
         Returns:
-            voltage in range [0, 1023] where 1023 =
+            voltage in range [0, 1023] where 1023 = VREF (3V3)
 
         """
 
