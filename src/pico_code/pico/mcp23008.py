@@ -14,9 +14,9 @@ class MCP23008:
     GPPU =  0x06
     GPIO =  0x09
 
-    def __init__(self, addr=None):
+    def __init__(self, i2c, addr=None):
         self._addr = addr if addr else 0x20
-        self.i2c = I2C(0, scl=Pin(9), sda=Pin(8), freq=100000)
+        self.i2c = i2c
         self.ipol(0x000) # set normal polarity
 
     def _write(self, reg, value):
