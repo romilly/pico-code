@@ -16,8 +16,8 @@ class MCP23008:
 
     def __init__(self, addr=None):
         self._addr = addr if addr else 0x20
-        self.ipol(0x000) # set normal polarity
         self.i2c = I2C(0, scl=Pin(9), sda=Pin(8), freq=100000)
+        self.ipol(0x000) # set normal polarity
 
     def _write(self, reg, value):
         self.i2c.writeto(self._addr, ustruct.pack('<BB', reg, value))
