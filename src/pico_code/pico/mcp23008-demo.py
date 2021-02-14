@@ -2,7 +2,7 @@ from mcp23008 import MCP23008
 from time import sleep
 from machine import Pin, I2C
 
-i2c = I2C(0, scl=Pin(21), sda=Pin(20), freq=100000) # pins for Pico Explorer
+i2c = I2C(0, scl=Pin(21), sda=Pin(20), freq=40000) # pins for Pico Explorer
 
 # Code added to help with debugging
 
