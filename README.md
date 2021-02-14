@@ -25,9 +25,12 @@ Pico and read  output from the Pi.
 
 ## (Very) Experimental vs code support
 
-I have started exploring VS Code. If you look in the .vscode directory you'll see a tasks.jsopn file that sets up user tasks. They invoke scripts that use ampy to copy a file or the contents of a directory, and one (use with are!) that will remove all the .py files from the Pico.
+I have started exploring VS Code. If you look in the .vscode directory you'll see a `tasks.json` file that sets up user
+tasks.They invoke scripts that use ampy to copy a file or the contents of a directory, and one (use with care!)
+that will remove *all* the .py files from the Pico.
 
-The scripts (in the scriots directory) are linux-only; I have tested them with Linux Mint on a workstation and with Raspberry Pi OS on a Pi.
+The scripts (in the scripts directory) are linux-only; I have tested them with Linux Mint on a workstation and with 
+Raspberry Pi OS on a Pi.
 
 You'll need to use chmod to make the scripts executable, and you need to install ampy.
 
