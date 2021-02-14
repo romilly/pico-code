@@ -23,13 +23,14 @@ Pico and read  output from the Pi.
 
 [mcp3008](mcp3008.md) is a MicroPython driver for the MCP3008 80-channel SPI ADC.
 
-## (Very) Experimental vs code support
+## (Very) Experimental VS Code support
 
-I have started exploring VS Code. If you look in the .vscode directory you'll see a `tasks.json` file that sets up user
+I have started exploring VS Code. If you look in the `.vscode` directory you'll see a `tasks.json` file that sets up user
 tasks.They invoke scripts that use ampy to copy a file or the contents of a directory, and one (use with care!)
 that will remove *all* the .py files from the Pico.
 
-The scripts (in the scripts directory) are linux-only; I have tested them with Linux Mint on a workstation and with 
+The scripts (which are in the `scripts` directory) are Linux-only; I have tested them with Linux Mint on a workstation 
+and with 
 Raspberry Pi OS on a Pi.
 
 You'll need to use chmod to make the scripts executable, and you need to install ampy.
