@@ -33,7 +33,7 @@ The scripts (which are in the `scripts` directory) are Linux-only; I have tested
 and with 
 Raspberry Pi OS on a Pi.
 
-You'll need to use chmod to make the scripts executable, and you need to install ampy.
+You'll need to use `chmod` to make the scripts executable, and you need to install `ampy`.
 
 ```
 cd scripts
