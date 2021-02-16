@@ -33,7 +33,8 @@ I have started exploring VS Code. If you look in the `.vscode` directory you'll 
 
 The scripts (which are in the `scripts` directory) are currently Linux-only; I have tested them with Linux Mint on a workstation and with Raspberry Pi OS on a Pi.
 
-I'd be delighted if someone with access to Windows or Mac OSX could add scripts annd edit the `tasks.json` file to make the tasks available in those enviroments.
+I'd be delighted if someone with access to Windows or Mac OSX could add scripts and edit the `tasks.json` file to 
+make the tasks available in those environments.
 
 You'll need to use `chmod` to make the scripts executable, and you need to install `ampy`.
 
