@@ -13,7 +13,7 @@ Connect FTDI orange to Pico GP5.
 """
 from machine import UART, Pin
 
-ser = UART(1, 115200)
+ser = UART(1, 115200,tx=Pin(8), rx=Pin(9))
 
 ser.write('Hello UART!\r\n')
 

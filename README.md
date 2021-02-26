@@ -22,7 +22,12 @@ The [first project](docs/talker.md) `talker` uses  a Talker bused on PySerial to
 
 [mcp3008](docs/mcp3008.md) is a MicroPython driver for the MCP3008 80-channel SPI ADC.
 
+## Resistomatic
+
+[resistomatic](docs/resistomatic.md) is a crude Ohm meter.
+
 ## Serial communications with UART1
+
 
 [UART demo](docs/UART1.md) shows how to do serial communications using UART 1.
 
