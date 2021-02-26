@@ -1,3 +1,6 @@
+"""
+Use a potentiometer to control a LED via PWM on the Tiny2040
+"""
 from machine import ADC, PWM
 
 inputs = [ADC(i) for i in [26, 27, 28]]
