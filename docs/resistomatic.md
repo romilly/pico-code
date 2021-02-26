@@ -35,3 +35,6 @@ def run():
         time.sleep(1.0)
 run()
 ```
+
+At some time *real soon now*(tm) I'll add code to display the resistance and the corresponding colour code on 
+the display of the explorer. For now, it just prints the results. You can read them on a connected host computer.
