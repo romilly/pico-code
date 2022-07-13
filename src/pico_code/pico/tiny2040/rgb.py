@@ -1,3 +1,6 @@
+"""
+Cycle the Tiny2040's on-board LED through a range of colours
+"""
 from machine import Pin
 from time import sleep_ms
 
