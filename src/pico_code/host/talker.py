@@ -4,7 +4,7 @@ import serial
 class Talker:
     TERMINATOR = '\r'.encode('UTF8')
 
-    def __init__(self, timeout=-1):
+    def __init__(self, timeout=1):
         """
         Initialise Talker instance
 
