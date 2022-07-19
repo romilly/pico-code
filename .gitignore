@@ -137,3 +137,4 @@ ENV/
 
 .idea/
 
+/src/pico_code/picow/secrets.py
