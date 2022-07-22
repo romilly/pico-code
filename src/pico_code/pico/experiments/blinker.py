@@ -7,7 +7,7 @@ It sets up the onboard LED and allows you to turn it on or off.
 from machine import Pin
 
 #use onboard LED which is controlled by Pin 25
-led = Pin(25, Pin.OUT)
+led = Pin("LED", Pin.OUT)
 
 
 # Turn the LED on

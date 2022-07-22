@@ -13,21 +13,19 @@ Host code has been tested on a Raspberry Pi connected to a Raspberry Pi Pico und
 
 The [first project](docs/talker.md) `talker` uses  a Talker bused on PySerial to send commands from the Pi to the Pico and read  output from the Pi.
 
-
 ## Function Generator
 
 [fungen](docs/fungen.md) is a minimalist AF (Audio Frequency) generator based on the Pico.
 
 ## MCO3008
 
-[mcp3008](docs/mcp3008.md) is a MicroPython driver for the MCP3008 80-channel SPI ADC.
+[mcp3008](docs/mcp3008.md) is a MicroPython driver for the MCP3008 8-channel SPI ADC.
 
 ## Resistomatic
 
 [resistomatic](docs/resistomatic.md) is a crude Ohm meter.
 
 ## Serial communications with UART1
-
 
 [UART demo](docs/UART1.md) shows how to do serial communications using UART 1.
 

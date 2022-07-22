@@ -39,7 +39,7 @@ To use it
 1. Copy talker.py into a directory of your choice.
 1. In that directory, run python3 to start an interactive session.
 1. Type `from talker import Talker`
-1. Type t = Talker(). *If you are running on Windows, you will need to type* `t = Talker('COM6')` *replacing COM6 by 
+1. Type `t = Talker()` *If you are running on Windows, you will need to type* `t = Talker('COM6')` *replacing COM6 by 
    whatever port the Pico is connected to*.
 1. Type `t.send('2 + 2')`
 1. Type `t.receive()` - if all is well, this will print the result 4.
