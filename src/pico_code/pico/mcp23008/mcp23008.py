@@ -5,7 +5,9 @@ See https://www.microchip.com/wwwproducts/en/MCP23008
 This implements a subset of chip features.
 """
 
-from machine import Pin, I2C
+# some of this code was copied from code for the MicroBit
+# at present, I think the read code is broken :(
+
 import ustruct
 
 class MCP23008:
@@ -23,7 +25,7 @@ class MCP23008:
         self.i2c.writeto(self._addr, ustruct.pack('<BB', reg, value))
 
     def _read(self, reg):
-        self.i2c.writeto(self._addr, ustruct.pack('<B', reg), repeat=True)
+        self.i2c.writeto(self._addr, ustruct.pack('<B', reg), stop=False)
         return self.i2c.readfrom(self._addr, 1)
 
     def output(self, val):

@@ -2,25 +2,19 @@ from mcp23008 import MCP23008
 from time import sleep
 from machine import Pin, I2C
 
-i2c = I2C(0, scl=Pin(21), sda=Pin(20), freq=40000) # pins for Pico Explorer
-
-# Code added to help with debugging
-
+i2c = I2C(0, scl=Pin(1), sda=Pin(0), freq=40000)
 
 
 def loop():
-    ic = MCP23008(i2c)
-    ic.direction(0x00)
-    count = 0
-    while True:
-        for i in range(256):
-            count += 1
-            try:
-                ic.output(i)
-            except:
-                print ('failed after %d iterations' % count)
-                return
-            sleep(0.1)
+    mcp23008 = MCP23008(i2c)
+    mcp23008.direction(0x00)
+    try:
+        while True:
+            for i in range(256):
+                mcp23008.output(i)
+                sleep(0.1)
+    finally:
+        mcp23008.output(0)
 
 
 loop()
