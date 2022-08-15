@@ -32,7 +32,7 @@ while True:
     a2 = adc.read_u16()
     light_level = a2/10
     values = bme_data() + [light_level]
-    print(values[0], values[2], values[3])
+    print(values[0], values[2], values[3]) # for plotting in Thonny
     for (topic, value) in zip(topics, values):
-        mc.publish(topic, str(value))
+        mc.publish(topic, str(value)) # published to Adafruit.IO
     time.sleep(60)
