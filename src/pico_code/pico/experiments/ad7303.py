@@ -22,11 +22,11 @@ class AD7303():
         self.spi_cs.value(1)  # deselect
 
 
-adc = AD7303()
+dac = AD7303()
 while True:
-    adc.set_output_A(255)
+    dac.set_output_A(255)
     sleep_us(25)
-    adc.set_output_A(0)
+    dac.set_output_A(0)
     sleep_us(25)
 
 

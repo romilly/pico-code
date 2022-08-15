@@ -4,8 +4,8 @@ import serial
 class Talker:
     TERMINATOR = '\r'.encode('UTF8')
 
-    def __init__(self, timeout=1):
-        self.serial = serial.Serial('/dev/ttyACM0', 115200, timeout=timeout)
+    def __init__(self, device = '/dev/ttyACM0', timeout=1):
+        self.serial = serial.Serial(device, 115200, timeout=timeout)
 
     def send(self, text: str):
         line = '%s\r\f' % text
@@ -21,4 +21,3 @@ class Talker:
 
     def close(self):
         self.serial.close()
-

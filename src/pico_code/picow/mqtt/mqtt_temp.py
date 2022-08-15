@@ -8,6 +8,7 @@ from secrets import SSID, PASSWORD, MQTT_HOST
 adc = ADC(26)
 connect(SSID, PASSWORD)
 mc = MQTTClient('thermo', MQTT_HOST)
+print('connected to %s' % MQTT_HOST)
 mc.connect()
 
 while True:

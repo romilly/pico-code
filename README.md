@@ -11,7 +11,8 @@ Host code has been tested on a Raspberry Pi connected to a Raspberry Pi Pico und
 
 ## Talker 
 
-The [first project](docs/talker.md) `talker` uses  a Talker bused on PySerial to send commands from the Pi to the Pico and read  output from the Pi.
+The [first project](docs/talker.md) `talker` uses  a Talker based on PySerial to send commands from the Pi to the 
+Pico and read  output from the Pi.
 
 ## Function Generator
 
