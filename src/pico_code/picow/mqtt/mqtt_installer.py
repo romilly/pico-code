@@ -1,5 +1,5 @@
-from secrets import SSID, PASSWORD
-from network_connection import connect
+from src.pico_code.picow.secrets import SSID, PASSWORD
+from src.pico_code.picow.network_connection import connect
 import upip
 
 

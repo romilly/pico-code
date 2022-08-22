@@ -33,9 +33,9 @@ MQTT_HOST='broker url'
 from machine import ADC, Pin
 import time
 import random
-import network_connection
+from src.pico_code.picow import network_connection
 from umqtt.simple import MQTTClient
-from secrets import SSID, PASSWORD, MQTT_HOST
+from src.pico_code.picow.secrets import SSID, PASSWORD, MQTT_HOST
 
 # connect to wifi
 # this may take several seconds

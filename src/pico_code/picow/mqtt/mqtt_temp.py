@@ -1,8 +1,8 @@
 from umqtt.simple import MQTTClient
-from network_connection import connect
+from src.pico_code.picow.network_connection import connect
 from machine import ADC
 import time
-from secrets import SSID, PASSWORD, MQTT_HOST
+from src.pico_code.picow.secrets import SSID, PASSWORD, MQTT_HOST
 
 
 adc = ADC(26)
