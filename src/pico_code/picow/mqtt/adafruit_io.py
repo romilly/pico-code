@@ -1,5 +1,5 @@
-from src.pico_code.picow.network_connection import connect
-from src.pico_code.picow.secrets import IO_USERNAME, IO_KEY, SSID, PASSWORD
+from network_connection import connect
+from secrets import IO_USERNAME, IO_KEY, SSID, PASSWORD
 from umqtt.simple import MQTTClient
 import random
 
