@@ -13,5 +13,5 @@ while True:
     a0 = adc.read_u16()
     volts_mv = 3300 * a0 / 65535.0  # 3V3 = 65535
     temp = (volts_mv - 500) / 10  # from
-    mc.publish(topic, str(temp))
+    mc.publish(tmp36_topic, str(temp))
     time.sleep(60)

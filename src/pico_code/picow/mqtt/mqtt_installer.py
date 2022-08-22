@@ -4,7 +4,10 @@ import upip
 
 
 def install():
-    connect(SSID, PASSWORD)
-    upip.install('umqtt.simple')
+    try:
+        import umqtt.simple
+    except:
+        connect(SSID, PASSWORD)
+        upip.install('umqtt.simple')
 
 install()
