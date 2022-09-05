@@ -37,7 +37,7 @@ Works with most (any?) Plantower I2C interfaced PM2.5 sensor.
 import time
 from digitalio import Direction, DigitalInOut
 from adafruit_bus_device.i2c_device import I2CDevice
-from . import PM25
+from src.pico_code.picow import PM25
 
 try:
     # Used only for typing

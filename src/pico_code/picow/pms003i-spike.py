@@ -1,14 +1,14 @@
 from machine import Pin, I2C
-from pm25_mp_i2c import PM25_I2C
+from pmsa003i import PMSA003i
 import time
 
-i2c=I2C(0, sda=Pin(0), scl=Pin(1), freq=100000)
-pm25 = PM25_I2C(i2c)
+i2c=I2C(0, sda=Pin(0), scl=Pin(1), freq=100000) # seems to be the maximum I2C bit rate that the PMS03i can cope with
+pmsa003i = PMSA003i(i2c)
 
 def try_to_read(count=5):
     for _ in range(count):
         try:
-            pm25.read()
+            pmsa003i.read()
             return
         except:
             pass
@@ -17,5 +17,5 @@ def try_to_read(count=5):
     
 try_to_read()   
 while True:
-    print(pm25.read())
+    print(pmsa003i.read())
     time.sleep(1)
