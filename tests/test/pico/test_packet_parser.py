@@ -7,7 +7,7 @@ from src.pico_code.picow.pmsa003i_packet_parser import aqi_reading
 
 
 def u16(value: int):
-    return (value).to_bytes(2, byteorder="big")
+    return value.to_bytes(2, byteorder="big")
 
 
 class PacketBuilder:
@@ -23,9 +23,9 @@ class PacketBuilder:
         packet_stream.write(u16(self._length))
         data = 13*[0] # a packet contains 13 data items, though the last one just contains error info.
         for i, value in enumerate(self._values):
-           data[i] = value
-        for value in data:
-            packet_stream.write(u16(value))
+            data[i] = value
+        for item in data:
+            packet_stream.write(u16(item))
         checksum = sum(packet_stream.getvalue()) if self._checksum is None else self._checksum
         packet_stream.write(u16(checksum))
         packet = packet_stream.getvalue()
