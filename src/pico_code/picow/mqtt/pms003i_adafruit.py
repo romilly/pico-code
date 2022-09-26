@@ -13,14 +13,13 @@ pmsa003i = PMSA003i(i2c)
 
 
 def try_to_read(count=5):
-    for _ in range(count):
+    for i in range(count):
         try:
-            pmsa003i.read()
-            return
-        except:
-            pass
+            return pmsa003i.read()
+        except Exception as e:
+            print("%s after %d attempts" % (e, i))
         time.sleep(1)
-    raise ValueError('could not read from PM2.5 after %d atttmepts' % count)
+    raise ValueError('could not read from PM2.5 after %d atttempts' % count)
 
 
 try_to_read()
@@ -28,7 +27,12 @@ try_to_read()
 mc = connect_to_adafruit_io('pms003i')
 
 while True:
-    d = pmsa003i.read()
+    try:
+        d = try_to_read()
+    except RuntimeError as e:
+        print(e)
+        time.sleep(1)
+        d = pmsa003i.read()
     print(d)
     for (topic, key) in zip(topics, keys):
         mc.publish(topic, str(d[key]))
