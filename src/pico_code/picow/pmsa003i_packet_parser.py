@@ -17,11 +17,13 @@ def aqi_reading(buffer):
     frame_len = struct.unpack(">H", buffer[2:4])[0]
     if frame_len != 28:
         raise RuntimeError("Invalid PM2.5 frame length")
+    
+    # verify checksum
+    expected = struct.unpack(">H", buffer[30:32])[0]
+    actual = sum(buffer[0:30])
+    if actual != expected:
+        raise RuntimeError("Invalid PM2.5 checksum - expected %d, got %d" % (expected, actual))
 
-    checksum = struct.unpack(">H", buffer[30:32])[0]
-    check = sum(buffer[0:30])
-    if check != checksum:
-        raise RuntimeError("Invalid PM2.5 checksum")
 
     # unpack data
     (
